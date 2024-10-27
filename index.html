@@ -25,11 +25,11 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                     <h5 class="modal-title">Simulasi Kredit</h5><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body"><label class="form-label" for="appt_name" style="font-weight: bold;font-size: 16px;text-align: center;background: var(--bs-body-bg);padding-top: 6px;padding-bottom: 6px;box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.21);border-radius: 10px;margin-bottom: 23px;width: 100%;">Cek simulasi kredit-mu di sini 😍</label>
-                    <form class="d-flex flex-column" id="kreditForm" style="width: 100%;"><label class="form-label" for="jenisMotor">Jenis Motor Honda</label><select class="form-select" id="jenisMotor" name="jenisMotor" style="margin-bottom: 10px;" required="" value="Pilih Motor"></select><label class="form-label" for="tipeMotor">Pilih Pilih Tipe Motor</label><select class="form-select" id="tipeMotor" name="tipeMotor" style="margin-bottom: 10px;" required="" value="Pilih tipe motor"></select><label class="form-label" for="dp">Pilih uang muka</label><select class="form-select" id="dp" name="dp" style="margin-bottom: 10px;" required="" value="Pilih uang muka"></select>
+                    <form class="d-flex flex-column" id="kreditForm" style="width: 100%;"><label class="form-label" for="jenisMotor" style="font-weight: bold;">Jenis Motor Honda</label><select class="form-select" id="jenisMotor" name="jenisMotor" style="margin-bottom: 10px;" required="" value="Pilih Motor"></select><label class="form-label" for="tipeMotor" style="font-weight: bold;">Pilih Pilih Tipe Motor</label><select class="form-select" id="tipeMotor" name="tipeMotor" style="margin-bottom: 10px;" required="" value="Pilih tipe motor"></select><label class="form-label" for="dp" style="font-weight: bold;">Pilih uang muka</label><select class="form-select" id="dp" name="dp" style="margin-bottom: 10px;" required="" value="Pilih uang muka"></select>
                         <div class="form-check" style="margin-bottom: 10px;"><input class="form-check-input" type="checkbox" id="formCheck-1" required=""><label class="form-check-label" for="formCheck-1">Setuju dengan pilihan di atas</label></div><button class="btn btn-primary" type="button" onclick="showLoadingAndCalculate()">Lihat Angsuran</button>
                     </form>
                     <div id="loading" style="display: none;text-align: center;margin-top: 10px;"><span>Sedang menghitung&nbsp;<span class="spinner-border spinner-border-sm" role="status" style="color: rgb(221,94,13);"></span>&nbsp;</span></div>
-                    <div id="result" style="display: none;text-align: center;margin-top: 10px;"><span><strong>Hasil Simulasi Kredit</strong></span>
+                    <div id="result" style="/*display: none;*/text-align: center;margin-top: 10px;"><span><strong>Hasil Simulasi Kredit</strong></span>
                         <div class="row">
                             <div class="col"><span style="font-size: 12px;">Harga terbaru&nbsp;<span id="promoTitle" style="font-size: 12px;">date</span>&nbsp;</span><script>
     // Array of month names in Indonesian
@@ -51,41 +51,41 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                             <div class="col" style="margin-top: 10px;margin-bottom: 10px;padding: 10px;background: rgba(210,210,210,0.75);border-radius: 16px;">
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Jenis Motor</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedJenisMotor" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedJenisMotor" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Tipe Motor</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedTipeMotor" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedTipeMotor" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Uang Muka</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedDP" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Dp</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedDP" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Dp</span></div>
                                 </div>
                             </div>
                             <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span><strong>Simulasi cicilan dengan harga terbaru</strong></span></div>
                             <div class="col" style="margin-top: 10px;margin-bottom: 10px;padding: 10px;background: rgba(210,210,210,0.75);border-radius: 16px;">
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 12 Bulan&nbsp; :</span></div>
-                                    <div class="col-md-6 col-lg-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran12" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                    <div class="col-md-6 col-lg-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran12" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 18 Bulan&nbsp; :</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran18" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran18" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 24 Bulan :</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran24" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran24" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 30 Bulan :</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran30" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran30" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
                                 </div>
                                 <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
                                     <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 36 Bulan :</span></div>
-                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran36" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran36" style="font-weight: bold;background: #f9ffb9;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
                                 </div>
                             </div>
-                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span>Ini hasil simulasi yang saya perhitungkan, apakah anda tertarik? jika tertarik, hubungi saya</span></div><button class="btn btndefault" id="whatsappButton" type="button" onclick="sendWhatsAppMessage()" style="padding-top: 3px;padding-bottom: 3px;padding-right: 16px;padding-left: 16px;">Hubungi Putri</button>
+                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span>Ini hasil simulasi yang saya perhitungkan, apakah anda tertarik? jika tertarik, hubungi saya</span></div><button class="btn btndefault" id="whatsappButton" type="button" onclick="sendWhatsAppMessage()" style="padding-top: 10px;padding-bottom: 10px;padding-right: 16px;padding-left: 16px;width: 100%;">Hubungi Putri</button>
                         </div>
                     </div>
                 </div><script>
@@ -219,14 +219,14 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
         const angsuran30 = document.getElementById("angsuran30").textContent;
         const angsuran36 = document.getElementById("angsuran36").textContent;
 
-        const message = `Halo kak\nSaya berminat melakukan pembelian motor ${selectedJenis}, pilihan saya motor ${selectedTipe} dengan uang muka ${selectedDP} dengan pilihan angsuran:\n` +
-            `- 12 bulan: ${angsuran12}\n` +
-            `- 18 bulan: ${angsuran18}\n` +
-            `- 24 bulan: ${angsuran24}\n` +
-            `- 30 bulan: ${angsuran30}\n` +
-            `- 36 bulan: ${angsuran36}\n\n` +
+        const message = `Halo kak\nSaya berminat melakukan pembelian motor *${selectedJenis}*, pilihan saya motor *${selectedTipe}* dengan uang muka *${selectedDP}* dengan pilihan angsuran:\n` +
+            `- 12 bulan: *${angsuran12}*\n` +
+            `- 18 bulan: *${angsuran18}*\n` +
+            `- 24 bulan: *${angsuran24}*\n` +
+            `- 30 bulan: *${angsuran30}*\n` +
+            `- 36 bulan: *${angsuran36}*\n\n` +
             `terima kasih\n` +
-            `engine: www.bimaselalubenar.my.id`;
+            `*engine: www.bimaselalubenar.my.id*`;
 
         const whatsappUrl = `https://wa.me/6282233073147?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
@@ -253,21 +253,21 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
     </nav>
     <div class="card d-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center">
         <div class="card-body text-center d-flex flex-column align-items-center" style="z-index: 2;width: 100%;max-width: 600px;padding-top: 108px;padding-bottom: 30px;padding-right: 0px;padding-left: 0px;"><img style="object-fit: cover;margin-bottom: 25px;border-radius: 50%;height: auto;width: 125px;border: 5px solid rgb(255,255,255);box-shadow: 0px 4px 6px 1px rgba(45,45,45,0.14);" src="assets/img/image/putri.webp">
-            <p style="font-size: 16px;margin-bottom: 0px;"><strong>Putri | MPM Motor</strong></p>
-            <p style="font-size: 12px;margin-bottom: 0px;">Solusi Motor Honda Terbaik untuk Anda!</p>
-            <div style="width: 100%;margin-top: 16px;margin-bottom: 16px;padding-right: 16px;padding-left: 16px;"><a class="btn btndefault" role="button" href="https://bit.ly/putri-mpm-motor" target="_blank" style="width: 100%;">WhatsApp Putri Yuk!</a><button class="btn btndefault" type="submit" style="width: 100%;" data-bs-target="#simulasi-kredit" data-bs-toggle="modal">Cek Simulasi Kredit</button><a class="btn btndefault" role="button" href="Janji-temu.html" style="width: 100%;">Buat Janji Temu</a></div>
+            <p style="font-size: 20px;margin-bottom: 0px;"><strong>Putri | MPM Motor</strong></p>
+            <p style="font-size: 16px;margin-bottom: 0px;">Solusi Motor Honda Terbaik untuk Anda!</p>
+            <div style="width: 100%;margin-top: 16px;margin-bottom: 16px;padding-right: 16px;padding-left: 16px;"><a class="btn btndefault" role="button" href="https://bit.ly/putri-mpm-motor" target="_blank" style="width: 100%;">WhatsApp Putri Yuk!</a><button class="btn btndefault" type="submit" style="width: 100%;" data-bs-target="#simulasi-kredit" data-bs-toggle="modal">Cek Simulasi Kredit</button><a class="btn btndefault" role="button" href="Janji-temu.html" style="width: 100%;">Buat Janji Temu</a><a class="btn btndefault" role="button" style="width: 100%;" href="#konsumen">Testi Moni Konsumen Putri</a></div>
             <div style="width: 100%;margin-top: 16px;margin-bottom: 16px;">
                 <div class="container" style="padding-right: 0px;padding-left: 0px;">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center" style="margin-right: 0px;margin-left: 0px;width: 100%;">
-                            <p style="font-size: 16px;margin-bottom: 0px;"><strong>Kami juga melayani pembelian motor Honda</strong></p>
-                            <p style="font-size: 12px;margin-bottom: 0px;">Matic - Sport - Cub - Ev</p>
+                            <p style="font-size: 20px;margin-bottom: 0px;"><strong>Kami juga melayani pembelian motor Honda</strong></p>
+                            <p style="font-size: 16px;margin-bottom: 0px;">Matic - Sport - Cub - Ev</p>
                         </div>
                     </div>
                     <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
                         <div class="col mb-4">
                             <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-beat-3-03062024-050824.png" style="object-fit: contain;height: 250px;"></a>
-                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;">Matic</span>
+                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;background: linear-gradient(#fd6b0d, rgb(254,110,17) 30%, rgb(255,141,66) 51%, rgb(254,112,19) 82%, #ff7217);">Matic</span>
                                     <h4 class="fw-bold">Promo Terbaru Honda Matic 🚀</h4>
                                     <p class="text-muted">Motor matic impian Anda kini lebih terjangkau! Cek promonya dan mulai berkendara penuh gaya!</p>
                                 </div>
@@ -275,7 +275,7 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                         </div>
                         <div class="col mb-4">
                             <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-cbr150r-400x300-tr-new-2-23102024-070111.png" style="object-fit: contain;height: 250px;"></a>
-                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;">Sport</span>
+                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;background: linear-gradient(#fd6b0d, rgb(254,110,17) 30%, rgb(255,141,66) 51%, rgb(254,112,19) 82%, #ff7217);">Sport</span>
                                     <h4 class="fw-bold">Honda Sport Tampil Gagah</h4>
                                     <p class="text-muted">Siap tampil beda di jalan? Pilih motor sport Honda yang membuat setiap perjalanan lebih berkesan!</p>
                                 </div>
@@ -283,7 +283,7 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                         </div>
                         <div class="col mb-4">
                             <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-new-supra-x-5-04032022-102907.png" style="object-fit: contain;height: 250px;"></a>
-                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;">Cub</span>
+                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;background: linear-gradient(#fd6b0d, rgb(254,110,17) 30%, rgb(255,141,66) 51%, rgb(254,112,19) 82%, #ff7217);">Cub</span>
                                     <h4 class="fw-bold">Pilihan Motor Cub Terbaru 🛵</h4>
                                     <p class="text-muted">Praktis dan hemat! Motor cub Honda jadi pilihan sempurna untuk Anda yang mencari kenyamanan di jalan.</p>
                                 </div>
@@ -291,7 +291,7 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                         </div>
                         <div class="col mb-4">
                             <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/tr:w-550,f-auto/uploads/product/thumbnail/em1-silver-samping-400x300-tr-21122023-045018.png" style="object-fit: contain;height: 250px;"></a>
-                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;">Ev</span>
+                                <div class="text-start py-4"><span class="badge bg-primary mb-2" style="font-size: 16px;background: linear-gradient(#fd6b0d, rgb(254,110,17) 30%, rgb(255,141,66) 51%, rgb(254,112,19) 82%, #ff7217);">Ev</span>
                                     <h4 class="fw-bold">Motor EV Ramah Lingkungan ⚡</h4>
                                     <p class="text-muted">Inovasi berkendara tanpa emisi! Pilih motor listrik Honda untuk gaya hidup modern dan ramah lingkungan.</p>
                                 </div>
@@ -303,30 +303,64 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
         </div>
         <div class="card-body text-center d-flex flex-column align-items-center" style="z-index: 1;width: 100%;max-width: 600px;padding: 0px;padding-top: 0px;padding-bottom: 0px;position: absolute;top: 0px;height: 170px;border-bottom-right-radius: 16px;border-bottom-left-radius: 16px;overflow: hidden;"><img style="object-fit: cover;width: 100%;height: 100%;" src="https://static.republika.co.id/uploads/images/inpicture_slide/mpm_200331182213-938.jpg"></div>
     </div>
+    <section style="padding-top: 0px;padding-bottom: 0px;">
+        <div class="container py-5" id="konsumen">
+            <div class="row mb-4 mb-lg-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <p class="fw-bold mb-2" style="color: rgb(45,45,45);">Testimoni</p>
+                    <h2 class="fw-bold">Konumen Honda</h2>
+                    <p class="text-muted">Konsumen setia honda dari <strong>Putri Parwitasari</strong></p>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-3 mx-auto" style="max-width: 700px;">
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar4.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar6.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar5.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar3.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar1.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="text-center"><img class="rounded mb-3 fit-cover" width="150" height="150" src="team/avatar2.jpg">
+                        <h5 class="fw-bold mb-0"><strong>Nama</strong></h5>
+                        <p class="text-muted mb-2">Unit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
                 <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">Profil</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Putri MPM Madiun</a></li>
-                        <li><a href="#">Simulasi Kredit</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                    <h3 class="fs-6 fw-bold">Blank</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                    <h3 class="fs-6 fw-bold">Blank</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
+                        <li><a href="index.html">Putri MPM Madiun</a></li>
+                        <li><a href="index.html" data-bs-target="#simulasi-kredit" data-bs-toggle="modal">Simulasi Kredit</a></li>
+                        <li><a href="Janji-temu.html" data-bs-target="#simulasi-kredit" data-bs-toggle="modal">Janji Temu</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
@@ -335,8 +369,8 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                 </div>
             </div>
             <hr>
-            <div class="text-muted d-flex justify-content-between align-items-center justify-content-xxl-center pt-3" style="text-align: center;">
-                <p class="mb-0">©️2024 | Putri MPM Madiun<br><em>Powered by : </em><a href="https://bimaselalubenar.my.id/" target="_blank"><em><span style="color: rgb(51, 96, 255);">bimaselalubenar</span></em></a></p>
+            <div class="text-center text-muted d-flex justify-content-center align-items-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center pt-3" style="text-align: center;">
+                <p class="mb-0" style="font-size: 16px;">©️2024 | Putri MPM Madiun<br><em>Powered by : </em><a href="https://bimaselalubenar.my.id/" target="_blank"><em><span style="color: rgb(51, 96, 255);">bimaselalubenar</span></em></a></p>
             </div>
         </div>
     </footer>
