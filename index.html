@@ -24,50 +24,68 @@ Honda Madiun, Dealer Honda Madiun, MPM Motor Madiun, Sepeda Motor Honda Madiun, 
                 <div class="modal-header" style="padding-top: 10px;padding-bottom: 10px;">
                     <h5 class="modal-title">Simulasi Kredit</h5><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body"><label class="form-label" for="appt_name" style="font-weight: bold;font-size: 20px;text-align: center;background: var(--bs-body-bg);padding-top: 6px;padding-bottom: 6px;box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.21);border-radius: 10px;margin-bottom: 23px;width: 100%;">Cek simulasi kredit-mu di sini 😍</label>
+                <div class="modal-body"><label class="form-label" for="appt_name" style="font-weight: bold;font-size: 16px;text-align: center;background: var(--bs-body-bg);padding-top: 6px;padding-bottom: 6px;box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.21);border-radius: 10px;margin-bottom: 23px;width: 100%;">Cek simulasi kredit-mu di sini 😍</label>
                     <form class="d-flex flex-column" id="kreditForm" style="width: 100%;"><label class="form-label" for="jenisMotor">Jenis Motor Honda</label><select class="form-select" id="jenisMotor" name="jenisMotor" style="margin-bottom: 10px;" required="" value="Pilih Motor"></select><label class="form-label" for="tipeMotor">Pilih Pilih Tipe Motor</label><select class="form-select" id="tipeMotor" name="tipeMotor" style="margin-bottom: 10px;" required="" value="Pilih tipe motor"></select><label class="form-label" for="dp">Pilih uang muka</label><select class="form-select" id="dp" name="dp" style="margin-bottom: 10px;" required="" value="Pilih uang muka"></select>
                         <div class="form-check" style="margin-bottom: 10px;"><input class="form-check-input" type="checkbox" id="formCheck-1" required=""><label class="form-check-label" for="formCheck-1">Setuju dengan pilihan di atas</label></div><button class="btn btn-primary" type="button" onclick="showLoadingAndCalculate()">Lihat Angsuran</button>
                     </form>
-                    <div id="loading" style="display: none;text-align: center;margin-top: 10px;"><span>Sedang menghitung&nbsp;</span><span class="spinner-border spinner-border-sm" role="status" style="color: rgb(126,53,6);border-color: rgb(221,94,13);"></span></div>
+                    <div id="loading" style="display: none;text-align: center;margin-top: 10px;"><span>Sedang menghitung&nbsp;<span class="spinner-border spinner-border-sm" role="status" style="color: rgb(221,94,13);"></span>&nbsp;</span></div>
                     <div id="result" style="display: none;text-align: center;margin-top: 10px;"><span><strong>Hasil Simulasi Kredit</strong></span>
                         <div class="row">
-                            <div class="col"><span>Hasil Simulasi Kredit</span></div>
+                            <div class="col"><span style="font-size: 12px;">Harga terbaru&nbsp;<span id="promoTitle" style="font-size: 12px;">date</span>&nbsp;</span><script>
+    // Array of month names in Indonesian
+    const monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+
+    // Get current month and year
+    const now = new Date();
+    const currentMonth = monthNames[now.getMonth()];
+    const currentYear = now.getFullYear();
+
+    // Set the promo title dynamically
+    document.getElementById("promoTitle").innerText = `${currentMonth} ${currentYear}`;
+</script></div>
                         </div>
                         <div class="container" style="text-align: left;">
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Jenis Motor</span></div>
-                                <div class="col-md-6"><span id="selectedJenisMotor" style="font-weight: bold;">Motor</span></div>
+                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;padding: 10px;background: rgba(210,210,210,0.75);border-radius: 16px;">
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Jenis Motor</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedJenisMotor" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Tipe Motor</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedTipeMotor" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Motor</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Uang Muka</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="selectedDP" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Dp</span></div>
+                                </div>
                             </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Tipe Motor</span></div>
-                                <div class="col-md-6"><span id="selectedTipeMotor" style="font-weight: bold;">Motor</span></div>
+                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span><strong>Simulasi cicilan dengan harga terbaru</strong></span></div>
+                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;padding: 10px;background: rgba(210,210,210,0.75);border-radius: 16px;">
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 12 Bulan&nbsp; :</span></div>
+                                    <div class="col-md-6 col-lg-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran12" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 18 Bulan&nbsp; :</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran18" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 24 Bulan :</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran24" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 30 Bulan :</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran30" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                </div>
+                                <div class="row" style="text-align: left;margin-right: 0px;margin-left: 0px;margin-bottom: 10px;">
+                                    <div class="col-md-6 col-lg-5 col-xxl-5" style="padding-right: 0px;padding-left: 0px;"><span>Angsuran 36 Bulan :</span></div>
+                                    <div class="col-md-6 col-xxl-7" style="padding-right: 0px;padding-left: 0px;"><span id="angsuran36" style="font-weight: bold;background: #5dceff;padding: 3px;padding-right: 8px;padding-left: 8px;border-radius: 5px;">Hasil Simulasi Kredit</span></div>
+                                </div>
                             </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Uang Muka</span></div>
-                                <div class="col-md-6"><span id="selectedDP" style="font-weight: bold;">Dp</span></div>
-                            </div>
-                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span><strong>Hasil Simulasi Kredit</strong></span></div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Angsuran 12 Bulan</span></div>
-                                <div class="col-md-6"><span id="angsuran12" style="font-weight: bold;">Hasil Simulasi Kredit</span></div>
-                            </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Angsuran 18 Bulan</span></div>
-                                <div class="col-md-6"><span id="angsuran18" style="font-weight: bold;">Hasil Simulasi Kredit</span></div>
-                            </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Angsuran 24 Bulan</span></div>
-                                <div class="col-md-6"><span id="angsuran24" style="font-weight: bold;">Hasil Simulasi Kredit</span></div>
-                            </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Angsuran 30 Bulan</span></div>
-                                <div class="col-md-6"><span id="angsuran30" style="font-weight: bold;">Hasil Simulasi Kredit</span></div>
-                            </div>
-                            <div class="row" style="text-align: left;">
-                                <div class="col-md-6 col-xxl-5"><span>Angsuran 36 Bulan</span></div>
-                                <div class="col-md-6"><span id="angsuran36" style="font-weight: bold;">Hasil Simulasi Kredit</span></div>
-                            </div>
-                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span>Ini hasil simulasi yang saya perhitungkan, apakah anda tertarik? jika tertarik, hubungi saya</span></div><button class="btn btn-success" id="whatsappButton" type="button" onclick="showLoadingAndCalculate()">Hubungi Putri</button>
+                            <div class="col" style="margin-top: 10px;margin-bottom: 10px;"><span>Ini hasil simulasi yang saya perhitungkan, apakah anda tertarik? jika tertarik, hubungi saya</span></div><button class="btn btndefault" id="whatsappButton" type="button" onclick="sendWhatsAppMessage()" style="padding-top: 3px;padding-bottom: 3px;padding-right: 16px;padding-left: 16px;">Hubungi Putri</button>
                         </div>
                     </div>
                 </div><script>
