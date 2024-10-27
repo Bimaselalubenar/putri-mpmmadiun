@@ -1,0 +1,15 @@
+.btndefault {
+  margin-bottom: 16px;
+  color: #f26f21;
+  border-width: 2px;
+  border-color: #f26f21;
+}
+
+.btndefault:hover, .btndefault:active {
+  background: #f26f21;
+  color: var(--bs-body-bg);
+  border-color: #ac7d73;
+  transition: ease 0.5s;
+  transform: translate(0px) translateY(-5px);
+}
+
